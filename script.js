@@ -9,9 +9,6 @@ Book.prototype.info = function() {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.isRead}`;
 }
 
-const theHobbit = new Book('The Hobbit', 'J.R.R Tolkien', 295, 'not read yet');
-console.log(theHobbit.info());
-
 let myLibrary = [];
 
 function addBookToLibrary() {
@@ -25,4 +22,11 @@ function addBookToLibrary() {
 }
 
 addBookToLibrary();
-console.log(myLibrary);
+
+function displayBooks() {
+    myLibrary.forEach((book) => {
+        console.log(book.info());
+    });
+}
+
+displayBooks();
