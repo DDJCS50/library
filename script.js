@@ -25,7 +25,14 @@ addBookToLibrary();
 
 function displayBooks() {
     myLibrary.forEach((book) => {
-        console.log(book.info());
+        let displayBox = document.querySelector('#cardBox');
+        let newBookCard = document.createElement('div');
+        newBookCard.innerText = `Title: ${book.title} 
+                                By: ${book.author} 
+                                Pages: ${book.pages} 
+                                Has Been Read?: ${book.isRead}`;
+        newBookCard.setAttribute('class', 'card');
+        displayBox.appendChild(newBookCard);
     });
 }
 
