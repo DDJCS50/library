@@ -31,20 +31,32 @@ function displayBooks() {
         if (book.onPage == false) {
             let displayBox = document.querySelector('#cardBox');
             let newBookCard = document.createElement('div');
-            let deleteButton = document.createElement('button')
+            let deleteButton = document.createElement('button');
+            let readStatusButton = document.createElement('button');
+            let bookInfo = document.createElement('p');
+            readStatusButton.innerText = 'Change Read Status';
+            readStatusButton.style.backgroundColor = '#94a3b8';
+            readStatusButton.style.width = '75%';
             deleteButton.innerText = 'Delete';
             deleteButton.style.backgroundColor = 'red';
-            newBookCard.innerText = `Title: ${book.title} 
-                                    By: ${book.author} 
-                                    Pages: ${book.pages} 
-                                    Has Been Read?: ${book.isRead}`;
+            deleteButton.style.width = '50%';
+            bookInfo.innerText = `Title: ${book.title} 
+                                  By: ${book.author} 
+                                  Pages: ${book.pages} 
+                                  Has Been Read?: ${book.isRead}`;
             newBookCard.setAttribute('class', 'card');
             newBookCard.setAttribute('id', book.libraryIndex);
+            newBookCard.appendChild(bookInfo);
             newBookCard.appendChild(deleteButton);
+            newBookCard.appendChild(readStatusButton);
             displayBox.appendChild(newBookCard);
             deleteButton.addEventListener('click', function(event) {
                 event.stopPropagation;
                 deleteBook(book.libraryIndex);
+            });
+            readStatusButton.addEventListener('click', function(event) {
+                event.stopPropagation;
+                changeReadStatus(book.libraryIndex);
             });
             book.onPage = true;
         } else {
@@ -88,4 +100,17 @@ function assignLibraryIndex() {
     for (let i = 0; i < myLibrary.length; i++) {
         myLibrary[i].libraryIndex = i;
     }
+}
+
+function changeReadStatus(index) {
+    let book = myLibrary[index];
+    book.isRead = prompt('New Read Status:');
+    
+    let card = document.getElementById(index);
+
+    card.firstElementChild.innerText = `Title: ${book.title} 
+                                        By: ${book.author} 
+                                        Pages: ${book.pages} 
+                                        Has Been Read?: ${book.isRead}`;
+
 }
