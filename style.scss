@@ -72,12 +72,17 @@ button {
     line-height: 1;
     cursor: pointer;
     text-align: center;
+	border-radius: 8px;
+	font-weight: bold;
+	box-shadow: 6px 7px 10px -5px gray;
 }
 
 body {
 	min-height: 100vh;
 	background-color: gray;
 	font-family: Arial, Helvetica, sans-serif;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 h1, h2, h3, h4, h5 {
@@ -93,9 +98,50 @@ header {
 	align-items: center;
 }
 
+#sidebar {
+	height: 80vh;
+	width: 20%;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 12px;
+	gap: 12px;
+	background-color: #cbd5e1;
+	> div {
+		display: flex;
+		justify-content: center;
+		> form {
+			visibility: hidden;
+			display: none;
+			> div {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				gap: 12px;
+				> div:nth-child(2) {
+					gap: 6px;
+					display: flex;
+					flex-direction: column;
+					> div {
+						display: flex;
+						justify-content: space-between;
+						gap: 6px;
+						align-items: center;
+					}
+				}
+			}
+		}
+	}
+}
+
 main {
 	height: 80vh;
+	width: 80%;
 	background-color: #f8fafc;
+	margin: 0;
 }
 
 footer {
@@ -129,4 +175,10 @@ footer {
 	padding: 24px;
 	border-radius: 8px;
 	box-shadow: 6px 7px 10px -5px gray;
+}
+
+input {
+	outline: none;
+	border: none;
+	height: 1.25rem;
 }
