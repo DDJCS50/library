@@ -1,14 +1,16 @@
-function Book(title, author, pages, isRead) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.isRead = isRead;
-    this.onPage = false;
-    this.libraryIndex = 0;
-}
+let Book = class {
+    constructor(title, author, pages, isRead) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.isRead = isRead;
+        this.onPage = false;
+        this.libraryIndex = 0;
+    }
 
-Book.prototype.info = function() {
-    return `${this.title} by ${this.author}, ${this.pages} pages, ${this.isRead}`;
+    info = () => {
+        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.isRead}`;
+    }
 }
 
 let myLibrary = [];
@@ -22,6 +24,7 @@ function addBookToLibrary(title, author, pages, isRead) {
     });
     if (bookInLibrary == false) {
         let newBook = new Book(title, author, pages, isRead)
+        console.log(newBook.info());
         myLibrary.push(newBook);
     }
 }
