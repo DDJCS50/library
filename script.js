@@ -24,7 +24,6 @@ function addBookToLibrary(title, author, pages, isRead) {
     });
     if (bookInLibrary == false) {
         let newBook = new Book(title, author, pages, isRead)
-        console.log(newBook.info());
         myLibrary.push(newBook);
     }
 }
