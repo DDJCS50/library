@@ -1,64 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <title>Library</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Library</title>
 </head>
+
 <body>
 
-    <header>
-        <h1>My Library</h1>
-    </header>
+  <header>
+    <h1>My Library</h1>
+  </header>
 
-    <div id="sidebar">
-        <button id="newBookButton">New Book</button>
+  <div id="sidebar">
+    <button id="newBookButton">New Book</button>
 
+    <div>
+      <form action="#" method="get">
         <div>
-            <form action="#" method="get">
-                <div>
-                    <p>Add your book:</p>
-                    <div>
-                        <div>
-                            <label for="title">Title</label>
-                            <input minlength="1" id="title" name="title" placeholder="Title..." pattern="^(?=.{1,40}$)[a-zA-Z]+(?:[\-'\s][a-zA-Z]+)*$" type="text">
-                        </div>
-                        <div>
-                            <label for="author">Author</label>
-                            <input minlength="1" id="author" name="author" placeholder="Author..." pattern="^(?=.{1,40}$)[a-zA-Z]+(?:[\-'\s][a-zA-Z]+)*$" type="text">
-                        </div>
-                        <div>
-                            <label for="pages">Pages</label>
-                            <input id="pages" name="pages" placeholder="Pages..." pattern="^[0-9]+$" type="number">
-                        </div>
-                        <div>
-                            <label for="readStatus">Read?</label>
-                            <input id="readStatus" name="readStatus" placeholder="Have you read this book yet?" pattern="/^[a-z ,.'\-]+$/i" type="text">
-                        </div>
-                    </div>
+          <p>Add your book:</p>
+          <div>
+            <div>
+              <label for="title">Title</label>
+              <input required minlength="1" id="title" name="title" placeholder="Title..."
+                pattern="^(?=.{1,40}$)[a-zA-Z]+(?:[\-'\s][a-zA-Z]+)*$" type="text">
+            </div>
+            <div>
+              <label for="author">Author</label>
+              <input required minlength="1" id="author" name="author" placeholder="Author..."
+                pattern="^(?=.{1,40}$)[a-zA-Z]+(?:[\-'\s][a-zA-Z]+)*$" type="text">
+            </div>
+            <div>
+              <label for="pages">Pages</label>
+              <input required minlength="1" id="pages" name="pages" placeholder="Pages..." pattern="^[0-9]+$"
+                type="number">
+            </div>
+            <div>
+              <label for="readStatus">Read?</label>
+              <input required id="readStatus" name="readStatus" placeholder="Have you read this book yet?"
+                pattern="^(?=.{1,40}$)[a-zA-Z]+(?:[\-'\s][a-zA-Z]+)*$" type="text">
+            </div>
+          </div>
 
-                    <div>
-                        <label for="submitButton"></label>
-                        <div>
-                            <button id="submitButton" name="submitButton" type="submit">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
+          <div>
+            <label for="submitButton"></label>
+            <div>
+              <button id="submitButton" name="submitButton" type="submit">Submit</button>
+            </div>
+          </div>
         </div>
-
+      </form>
     </div>
 
-    <main>
-        <div id="cardBox">
-            
-        </div>
-    </main>
+  </div>
 
-    <footer>
-        <h3>By: DDJCS50</h3>
-    </footer>
+  <main>
+    <div id="cardBox">
+
+    </div>
+  </main>
+
+  <footer>
+    <h3>By: DDJCS50</h3>
+  </footer>
 </body>
+
 </html>
